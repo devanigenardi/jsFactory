@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+      <ul id="show"></ul>
+    </div>
+    
+    <script>
+    
+        var factoryPersons = function(name, age, country){
+        var node = document.createElement("LI");
+
+            var info = {};
+          info.name = name;
+          info.age = age;
+          info.country = country;
+
+          info.addingInfo = function(){
+                var textnode = document.createTextNode("la edad es de " + age + ", su nombre es " + name + " y es de: " + country);
+            node.appendChild(textnode);
+            document.getElementById("show").appendChild(node);
+          }
+
+          return info;
+
+        };
+
+        var person1 = factoryPersons("jose", 22, "NL");
+        person1.addingInfo();
+
+        var person2 = factoryPersons("juan", 21, "CR");
+        person2.addingInfo();
+        
+    </script>
+    
+</body>
+</html>
